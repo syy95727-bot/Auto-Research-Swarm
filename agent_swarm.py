@@ -8,7 +8,7 @@ from openai import OpenAI
 # ==========================================
 # 1. 配置与初始化 (Setup & Config)
 # ==========================================
-# 配置真实日志输出，审核人员最喜欢看这种带时间戳的 INFO
+
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(name)s - %(message)s')
 logger = logging.getLogger("AutoResearchSwarm")
 
@@ -23,7 +23,6 @@ MODEL_NAME = "gpt-4o-mini"
 
 # ==========================================
 # 2. 定义数据结构 (Pydantic Models)
-# 这一步非常硬核，向审核证明你懂得控制 LLM 输出结构，而非盲目让 LLM 生成文本
 # ==========================================
 class TaskPlan(BaseModel):
     thoughts: str = Field(description="思考为什么要这么拆解任务")
